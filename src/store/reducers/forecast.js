@@ -1,33 +1,75 @@
 // @flow
 
 import { combineReducers } from 'redux';
+import moment from 'moment';
 
-import type { moment } from 'moment';
+import { RECEIVE_FORECAST } from '../actions/ui';
 
-type ForecastCurrent = {
-  date: moment,
-  condition_code: number,
-  temp_c: number,
-  temp_f: number,
+import type { ForecastCurrent } from '../../types/ForecastCurrent';
+import type { ForecastDay } from '../../types/ForecastDay';
+
+function current(state: ?ForecastCurrent = null, action) {
+  switch (action.type) {
+    case RECEIVE_FORECAST: {
+      const {
+        current: {
+          // ESLint suppression - This data comes from Apixu and is beyond my control
+          // eslint-disable-next-line camelcase
+          last_updated_epoch, condition: { code }, temp_c, temp_f,
+        },
+      } = action.payload.json;
+
+      return {
+        date: moment(last_updated_epoch),
+        conditionCode: code,
+        tempC: temp_c,
+        tempF: temp_f,
+      };
+    }
+    default:
+      return state;
+  }
 }
 
-function current(state: ForecastCurrent = null) {
-  return state;
-}
+function days(state: ?Array<ForecastDay> = null, action) {
+  switch (action.type) {
+    case RECEIVE_FORECAST: {
+      const { forecast: { forecastday } } = action.payload.json;
 
-type ForecastDay = {
-  date: moment,
-  condition_code: number,
-  maxtemp_c: number,
-  maxtemp_f: number,
-  mintemp_c: number,
-  mintemp_f: number,
-  avgtemp_c: number,
-  avgtemp_f: number,
-}
+      return forecastday.map((day) => {
+        const {
+          // ESLint suppression - This data comes from Apixu and is beyond my control
+          /* eslint-disable camelcase */
+          date_epoch,
+          day: {
+            condition: { code },
+            maxtemp_c,
+            maxtemp_f,
+            mintemp_c,
+            mintemp_f,
+            avgtemp_c,
+            avgtemp_f,
+          },
+          /* eslint-enable */
+        } = day;
 
-function days(state: Array<ForecastDay> = null) {
-  return state;
+        return {
+          // ESLint suppression - This data comes from Apixu and is beyond my control
+          // eslint-disable-next-line camelcase
+          date: moment(date_epoch * 1000),
+          conditionCode: code,
+          maxTempC: maxtemp_c,
+          maxTempF: maxtemp_f,
+          minTempC: mintemp_c,
+          minTempF: mintemp_f,
+          avgTempC: avgtemp_c,
+          avgTempF: avgtemp_f,
+        };
+      });
+    }
+    default:
+      return state;
+  }
 }
 
 export default combineReducers({

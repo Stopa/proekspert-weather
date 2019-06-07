@@ -7,10 +7,12 @@ import './App.css';
 
 import store from '../../store';
 
+import AppContainer from '../AppContainer';
+
 function App() {
   return (
     <Provider store={store}>
-      <h1>The weather is probably alright</h1>
+      <AppContainer />
     </Provider>
   );
 }
