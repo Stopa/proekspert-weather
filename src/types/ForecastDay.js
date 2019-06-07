@@ -1,9 +1,7 @@
 // @flow
 
-import type { moment } from 'moment';
-
 export type ForecastDay = {
-  date: moment,
+  date: number,
   conditionCode: number,
   maxTempC: number,
   maxTempF: number,

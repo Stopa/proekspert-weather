@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import { hideResults } from '../../store/actions/ui';
 
@@ -34,7 +35,7 @@ function ResultsView(props: Props) {
       <button type="button" onClick={goToSearch}>Back</button>
       <TempModeToggle />
       { `It's ${temp} here right now.` }
-      { days.map(day => <DayBlock key={day.date.unix()} {...day} />) }
+      { days.map(day => <DayBlock key={moment(day.date).unix()} {...day} />) }
     </section>
   );
 }

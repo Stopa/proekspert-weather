@@ -1,6 +1,7 @@
 // @flow
 
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import TEMP_MODES from '../../data/TEMP_MODES';
 
@@ -17,7 +18,7 @@ function DayBlock(props: Props) {
 
   const temp = mode === TEMP_MODES.C ? avgTempC : avgTempF;
 
-  return `On ${date.format('dddd')} it will be ${temp}. `;
+  return `On ${moment(date).format('dddd')} it will be ${temp}. `;
 }
 
 function mapStateToProps(state) {

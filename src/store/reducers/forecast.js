@@ -1,7 +1,6 @@
 // @flow
 
 import { combineReducers } from 'redux';
-import moment from 'moment';
 
 import { RECEIVE_FORECAST } from '../actions/ui';
 
@@ -19,8 +18,9 @@ function current(state: ?ForecastCurrent = null, action) {
         },
       } = action.payload.json;
 
-      return {
-        date: moment(last_updated_epoch),
+      return {// ESLint suppression - This data comes from Apixu and is beyond my control
+        // eslint-disable-next-line camelcase
+        date: last_updated_epoch * 1000,
         conditionCode: code,
         tempC: temp_c,
         tempF: temp_f,
@@ -56,7 +56,7 @@ function days(state: ?Array<ForecastDay> = null, action) {
         return {
           // ESLint suppression - This data comes from Apixu and is beyond my control
           // eslint-disable-next-line camelcase
-          date: moment(date_epoch * 1000),
+          date: date_epoch * 1000,
           conditionCode: code,
           maxTempC: maxtemp_c,
           maxTempF: maxtemp_f,
