@@ -1,15 +1,25 @@
 // @flow
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
 import './App.css';
 
 import store from '../../store';
 
+import { restoreForecastFromCache, appCacheKey } from '../../store/actions/forecast';
+
 import AppContainer from '../AppContainer';
 
 function App() {
+  useEffect(() => {
+    const cache = JSON.parse(window.localStorage.getItem(appCacheKey));
+
+    if (cache !== null) {
+      store.dispatch(restoreForecastFromCache(cache));
+    }
+  }, []);
+
   return (
     <Provider store={store}>
       <AppContainer />

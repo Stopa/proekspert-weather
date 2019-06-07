@@ -14,9 +14,9 @@ function query(state = null, action) {
     case SET_QUERY:
       return action.payload.query;
     case RECEIVE_FORECAST: {
-      const { location: { name } } = action.payload.json;
+      const { location } = action.payload.forecast;
 
-      return name;
+      return location;
     }
     default:
       return state;
