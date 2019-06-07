@@ -7,7 +7,8 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 
-import { setQuery, fetchForecast } from '../../store/actions/ui';
+import { setQuery } from '../../store/actions/ui';
+import { fetchForecast } from '../../store/actions/forecast';
 
 type Props = {
   query: string,

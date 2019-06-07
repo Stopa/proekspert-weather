@@ -5,8 +5,9 @@ import { combineReducers } from 'redux';
 import TEMP_MODES from '../../data/TEMP_MODES';
 
 import {
-  SET_QUERY, REQUEST_FORECAST, RECEIVE_FORECAST, SET_ERROR, SET_MODE, SHOW_RESULTS, HIDE_RESULTS,
+  SET_QUERY, SET_ERROR, SET_MODE, SHOW_RESULTS, HIDE_RESULTS,
 } from '../actions/ui';
+import { REQUEST_FORECAST, RECEIVE_FORECAST } from '../actions/forecast';
 
 function query(state = null, action) {
   switch (action.type) {

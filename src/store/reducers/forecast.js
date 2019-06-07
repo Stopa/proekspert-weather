@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 
-import { RECEIVE_FORECAST } from '../actions/ui';
+import { RECEIVE_FORECAST } from '../actions/forecast';
 
 import type { ForecastCurrent } from '../../types/ForecastCurrent';
 import type { ForecastDay } from '../../types/ForecastDay';
@@ -18,7 +18,8 @@ function current(state: ?ForecastCurrent = null, action) {
         },
       } = action.payload.json;
 
-      return {// ESLint suppression - This data comes from Apixu and is beyond my control
+      return {
+        // ESLint suppression - This data comes from Apixu and is beyond my control
         // eslint-disable-next-line camelcase
         date: last_updated_epoch * 1000,
         conditionCode: code,
