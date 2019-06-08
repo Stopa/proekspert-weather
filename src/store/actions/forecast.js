@@ -1,12 +1,11 @@
 // @flow
 
-import success from '../../data/success.json';
-import error from '../../data/error.json';
-
 import { setError } from './ui';
 
 import type { ForecastCurrent } from '../../types/ForecastCurrent';
 import type { ForecastDay } from '../../types/ForecastDay';
+
+import config from '../../config.json';
 
 export const REQUEST_FORECAST = 'REQUEST_FORECAST';
 
@@ -36,13 +35,15 @@ export function fetchForecast() {
     dispatch(requestForecast());
 
     try {
-      const mockFetch = new Promise((resolve) => {
-        window.setTimeout(() => {
-          resolve(query === 'Tallinn' ? success : error);
-        }, 3000);
-      });
+      const requestURL = new URL('http://api.apixu.com/v1/forecast.json');
 
-      const json = await mockFetch;
+      requestURL.searchParams.set('days', '7');
+      requestURL.searchParams.set('q', query);
+      requestURL.searchParams.set('key', config.api_key);
+
+      const response = await fetch(requestURL);
+
+      const json = await response.json();
 
       if (json.error) {
         throw new Error(json.error.message);
