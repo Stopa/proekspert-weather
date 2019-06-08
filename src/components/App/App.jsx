@@ -1,5 +1,9 @@
 // @flow
 
+/**
+ * Flow suppression as it doesn't seem to support React Hooks in my version
+ */
+// $FlowFixMe
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
