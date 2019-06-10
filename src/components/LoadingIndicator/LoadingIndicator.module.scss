@@ -1,0 +1,16 @@
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+.LoadingIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spin 1s linear infinite;
+  font-size: 32px;
+}

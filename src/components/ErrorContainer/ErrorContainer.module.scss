@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.ErrorContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  color: $bg-grad-start;
+  font-size: 32px;
+  padding: 24px 32px;
+  border: 1px dashed currentColor;
+  border-top: none;
+}

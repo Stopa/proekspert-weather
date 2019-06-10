@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import classes from './AppContainer.module.scss';
 
 import LoadingIndicator from '../LoadingIndicator';
+import ErrorContainer from '../ErrorContainer';
 import SearchView from '../SearchView';
 import ResultsView from '../ResultsView';
 
@@ -21,7 +22,7 @@ function AppContainer(props: Props) {
   return (
     <main className={classes.AppContainer}>
       { loading && <LoadingIndicator /> }
-      { error && <h1>{ error }</h1> }
+      { error && <ErrorContainer message={error} /> }
       {
         showResults
           ? <ResultsView />
