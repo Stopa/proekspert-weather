@@ -25,7 +25,7 @@ function SearchView(props: Props) {
   } = props;
 
   const changeListener = useCallback((event) => {
-    changeQuery(event.currentTarget.value);
+    changeQuery(event.currentTarget.value.trim());
   }, [changeQuery]);
 
   const submitListener = useCallback((event) => {
@@ -65,7 +65,7 @@ function SearchView(props: Props) {
     <form action="#" onSubmit={submitListener} className={classes.SearchForm}>
       <div className={classes.SearchForm_control}>
         <input type="search" placeholder="City" aria-label="Enter your location" value={query || ''} onChange={changeListener} />
-        <button type="submit" className="material-icons">search</button>
+        <button type="submit" className="material-icons" disabled={query === ''}>search</button>
       </div>
       or
       <button type="button" className={classes.SearchForm_gps} onClick={gpsButtonClickListener}>
