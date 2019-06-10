@@ -7,6 +7,8 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 
+import classes from './SearchView.module.scss';
+
 import { setQuery, setError } from '../../store/actions/ui';
 import { fetchForecast } from '../../store/actions/forecast';
 
@@ -60,9 +62,17 @@ function SearchView(props: Props) {
   }, [geolocationSuccess, geolocationError]);
 
   return (
-    <form action="#" onSubmit={submitListener}>
-      <input type="text" value={query || ''} onChange={changeListener} />
-      <button type="button" onClick={gpsButtonClickListener}>Geolocate me bro</button>
+    <form action="#" onSubmit={submitListener} className={classes.SearchForm}>
+      <div className={classes.SearchForm_control}>
+        <input type="search" placeholder="City" aria-label="Enter your location" value={query || ''} onChange={changeListener} />
+        <button type="submit" className="material-icons">search</button>
+      </div>
+      or
+      <button type="button" className={classes.SearchForm_gps} onClick={gpsButtonClickListener}>
+        use my
+        {' '}
+        <u>current position</u>
+      </button>
     </form>
   );
 }

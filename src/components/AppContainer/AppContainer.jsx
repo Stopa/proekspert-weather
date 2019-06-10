@@ -3,6 +3,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import classes from './AppContainer.module.scss';
+
 import LoadingIndicator from '../LoadingIndicator';
 import SearchView from '../SearchView';
 import ResultsView from '../ResultsView';
@@ -17,7 +19,7 @@ function AppContainer(props: Props) {
   const { showResults, loading, error } = props;
 
   return (
-    <main>
+    <main className={classes.AppContainer}>
       { loading && <LoadingIndicator /> }
       { error && <h1>{ error }</h1> }
       {
