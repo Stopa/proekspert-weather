@@ -6,6 +6,8 @@ import type { ForecastCurrent } from '../../types/ForecastCurrent';
 import type { ForecastDay } from '../../types/ForecastDay';
 
 import config from '../../config.json';
+import success from '../../data/success.json';
+import error from '../../data/error.json';
 
 export const REQUEST_FORECAST = 'REQUEST_FORECAST';
 
@@ -35,6 +37,7 @@ export function fetchForecast() {
     dispatch(requestForecast());
 
     try {
+      /*
       const requestURL = new URL('http://api.apixu.com/v1/forecast.json');
 
       requestURL.searchParams.set('days', '7');
@@ -44,6 +47,18 @@ export function fetchForecast() {
       const response = await fetch(requestURL);
 
       const json = await response.json();
+      */
+      const mockAPI = new Promise((resolve) => {
+        window.setTimeout(() => {
+          if (query === 'Tallinn') {
+            resolve(success);
+          } else {
+            resolve(error);
+          }
+        }, 1000);
+      });
+
+      const json = await mockAPI;
 
       if (json.error) {
         throw new Error(json.error.message);

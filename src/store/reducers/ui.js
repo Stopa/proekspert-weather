@@ -36,6 +36,8 @@ function error(state = null, action) {
   switch (action.type) {
     case SET_ERROR:
       return action.payload.message;
+    case RECEIVE_FORECAST:
+      return null;
     default:
       return state;
   }

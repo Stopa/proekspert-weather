@@ -1,0 +1,242 @@
+{
+	"1000": {
+		"code" : 1000,
+		"description" : "Clear",
+		"icon" : "wi-day-sunny"
+	},
+	"1003": {
+		"code" : 1003,
+		"description" : "Partly cloudy",
+		"icon" : "wi-day-sunny-overcast"
+	},
+	"1006": {
+		"code" : 1006,
+		"description" : "Cloudy",
+		"icon" : "wi-day-cloudy"
+	},
+	"1009": {
+		"code" : 1009,
+		"description" : "Overcast",
+		"icon" : "wi-day-sunny-overcast"
+	},
+	"1030": {
+		"code" : 1030,
+		"description" : "Mist",
+		"icon" : "wi-fog"
+	},
+	"1063": {
+		"code" : 1063,
+		"description" : "Patchy rain possible",
+		"icon" : "wi-rain-mix"
+	},
+	"1066": {
+		"code" : 1066,
+		"description" : "Patchy snow possible",
+		"icon" : "wi-snow"
+	},
+	"1069": {
+		"code" : 1069,
+		"description" : "Patchy sleet possible",
+		"icon" : "wi-sleet"
+	},
+	"1072": {
+		"code" : 1072,
+		"description" : "Patchy freezing drizzle possible",
+		"icon" : "wi-raindrops"
+	},
+	"1087": {
+		"code" : 1087,
+		"description" : "Thundery outbreaks possible",
+		"icon" : "wi-thunderstorm"
+	},
+	"1114": {
+		"code" : 1114,
+		"description" : "Blowing snow",
+		"icon" : "wi-snow-wind"
+	},
+	"1117": {
+		"code" : 1117,
+		"description" : "Blizzard",
+		"icon" : "wi-snow-wind"
+	},
+	"1135": {
+		"code" : 1135,
+		"description" : "Fog",
+		"icon" : "wi-fog"
+	},
+	"1147": {
+		"code" : 1147,
+		"description" : "Freezing fog",
+		"icon" : "wi-fog"
+	},
+	"1150": {
+		"code" : 1150,
+		"description" : "Patchy light drizzle",
+		"icon" : "wi-showers"
+	},
+	"1153": {
+		"code" : 1153,
+		"description" : "Light drizzle",
+		"icon" : "wi-showers"
+	},
+	"1168": {
+		"code" : 1168,
+		"description" : "Freezing drizzle",
+		"icon" : "wi-hail"
+	},
+	"1178": {
+		"code" : 1171,
+		"description" : "Heavy freezing drizzle",
+		"icon" : "wi-hail"
+	},
+	"1180": {
+		"code" : 1180,
+		"description" : "Patchy light rain",
+		"icon" : "wi-showers"
+	},
+	"1183": {
+		"code" : 1183,
+		"description" : "Light rain",
+		"icon" : "wi-showers"
+	},
+	"1186": {
+		"code" : 1186,
+		"description" : "Moderate rain at times",
+		"icon" : "wi-rain"
+	},
+	"1189": {
+		"code" : 1189,
+		"description" : "Moderate rain",
+		"icon" : "wi-rain"
+	},
+	"1192": {
+		"code" : 1192,
+		"description" : "Heavy rain at times",
+		"icon" : "wi-rain"
+	},
+	"1195": {
+		"code" : 1195,
+		"description" : "Heavy rain",
+		"icon" : "wi-rain"
+	},
+	"1198": {
+		"code" : 1198,
+		"description" : "Light freezing rain",
+		"icon" : "wi-sleet"
+	},
+	"1201": {
+		"code" : 1201,
+		"description" : "Moderate or heavy freezing rain",
+		"icon" : "wi-sleet"
+	},
+	"1204": {
+		"code" : 1204,
+		"description" : "Light sleet",
+		"icon" : "wi-sleet"
+	},
+	"1207": {
+		"code" : 1207,
+		"description" : "Moderate or heavy sleet",
+		"icon" : "wi-sleet"
+	},
+	"1210": {
+		"code" : 1210,
+		"description" : "Patchy light snow",
+		"icon" : "wi-snow"
+	},
+	"1213": {
+		"code" : 1213,
+		"description" : "Light snow",
+		"icon" : "wi-snow"
+	},
+	"1216": {
+		"code" : 1216,
+		"description" : "Patchy moderate snow",
+		"icon" : "wi-snow"
+	},
+	"1219": {
+		"code" : 1219,
+		"description" : "Moderate snow",
+		"icon" : "wi-snow"
+	},
+	"1222": {
+		"code" : 1222,
+		"description" : "Patchy heavy snow",
+		"icon" : "wi-snow-wind"
+	},
+	"1225": {
+		"code" : 1225,
+		"description" : "Heavy snow",
+		"icon" : "wi-snow-wind"
+	},
+	"1237": {
+		"code" : 1237,
+		"description" : "Ice pellets",
+		"icon" : "wi-hail"
+	},
+	"1240": {
+		"code" : 1240,
+		"description" : "Light rain shower",
+		"icon" : "wi-showers"
+	},
+	"1243": {
+		"code" : 1243,
+		"description" : "Moderate or heavy rain shower",
+		"icon" : "wi-showers"
+	},
+	"1246": {
+		"code" : 1246,
+		"description" : "Torrential rain shower",
+		"icon" : "wi-rain"
+	},
+	"1249": {
+		"code" : 1249,
+		"description" : "Light sleet showers",
+		"icon" : "wi-sleet"
+	},
+	"1252": {
+		"code" : 1252,
+		"description" : "Moderate or heavy sleet showers",
+		"icon" : "wi-sleet"
+	},
+	"1255": {
+		"code" : 1255,
+		"description" : "Light snow showers",
+		"icon" : "wi-snow"
+	},
+	"1258": {
+		"code" : 1258,
+		"description" : "Moderate or heavy snow showers",
+		"icon" : "wi-hail"
+	},
+	"1261": {
+		"code" : 1261,
+		"description" : "Light showers of ice pellets",
+		"icon" : "wi-hail"
+	},
+	"1264": {
+		"code" : 1264,
+		"description" : "Moderate or heavy showers of ice pellets",
+		"icon" : "wi-hail"
+	},
+	"1273": {
+		"code" : 1273,
+		"description" : "Patchy light rain with thunder",
+		"icon" : "wi-storm-showers"
+	},
+	"1276": {
+		"code" : 1276,
+		"description" : "Moderate or heavy rain with thunder",
+		"icon" : "wi-thunderstorm"
+	},
+	"1279": {
+		"code" : 1279,
+		"description" : "Patchy light snow with thunder",
+		"icon" : "wi-snow-wind"
+	},
+	"1282": {
+		"code" : 1282,
+		"description" : "Moderate or heavy snow with thunder",
+		"icon" : "wi-snow-wind"
+	}
+}

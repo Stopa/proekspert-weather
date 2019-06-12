@@ -1,32 +1,32 @@
 // @flow
 
-import { connect } from 'react-redux';
+import React from 'react';
 import moment from 'moment';
 
-import TEMP_MODES from '../../data/TEMP_MODES';
+import classes from './DayBlock.module.scss';
 
 import type { ForecastDay } from '../../types/ForecastDay';
 
-type Props = ForecastDay & {
-  mode: String,
-}
+import WeatherConditionIcon from '../WeatherConditionIcon';
 
-function DayBlock(props: Props) {
+import useTemp from '../../hooks/useTemp';
+
+type Props = ForecastDay;
+
+export default function DayBlock(props: Props) {
   const {
-    date, avgTempC, avgTempF, mode,
+    date, avgTempC, avgTempF, conditionCode,
   } = props;
 
-  const temp = mode === TEMP_MODES.C ? avgTempC : avgTempF;
+  const temperature = useTemp(avgTempC, avgTempF);
 
-  return `On ${moment(date).format('dddd')} it will be ${temp}. `;
+  return (
+    <div className={classes.DayBlock}>
+      <time dateTime={date}>{ moment(date).format('dddd') }</time>
+      <span className={classes.icon}>
+        <WeatherConditionIcon code={conditionCode} />
+      </span>
+      { temperature }
+    </div>
+  );
 }
-
-function mapStateToProps(state) {
-  const { ui: { mode } } = state;
-
-  return {
-    mode,
-  };
-}
-
-export default connect(mapStateToProps)(DayBlock);

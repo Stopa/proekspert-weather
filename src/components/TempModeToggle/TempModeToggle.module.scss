@@ -1,0 +1,49 @@
+.TempModeToggle {
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  font: inherit;
+  color: currentColor;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 84px;
+  height: 32px;
+  display: flex;
+  align-items: stretch;
+  padding: 2px 1px;
+  outline: none;
+
+  &:hover {
+    .Handle {
+      box-shadow: 0 0 10px;
+    }
+  }
+}
+
+.TempModeToggleActive .Inner {
+  transform: translate3d(-70%, 0, 0);
+}
+
+.Inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transform: translate3d(-2px, 0, 0);
+  transition: transform 100ms ease-in-out;
+
+  span {
+    flex: 0 0 70%;
+    text-align: center;
+  }
+
+  .Handle {
+    flex-basis: calc(30% - 2px);
+    align-self: stretch;
+    border: 1px solid currentColor;
+    border-radius: 13px;
+    margin: 0 1px;
+    box-shadow: 0 0 0;
+    transition: box-shadow 100ms linear;
+  }
+}

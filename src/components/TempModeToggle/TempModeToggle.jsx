@@ -7,6 +7,8 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 
+import classes from './TempModeToggle.module.scss';
+
 import { setMode } from '../../store/actions/ui';
 
 import TEMP_MODES from '../../data/TEMP_MODES';
@@ -19,20 +21,43 @@ type Props = {
 function TempModeToggle(props: Props) {
   const { mode, changeMode } = props;
 
+  const keys = Object.keys(TEMP_MODES);
+
+  const otherOptionKey = keys.find(option => TEMP_MODES[option] !== mode);
+
+  if (otherOptionKey === undefined) {
+    throw new Error('Cannot find a temperature mode to toggle to.');
+  }
+
+  const otherOption = TEMP_MODES[otherOptionKey];
+
   const toggleMode = useCallback(() => {
-    const otherOptionKey = Object.keys(TEMP_MODES).find(option => TEMP_MODES[option] !== mode);
-
-    if (otherOptionKey === undefined) {
-      throw new Error('Cannot find a temperature mode to toggle to.');
-    }
-
-    const otherOption = TEMP_MODES[otherOptionKey];
-
     changeMode(otherOption);
-  }, [changeMode, mode]);
+  }, [changeMode, otherOption]);
+
+  const buttonClasses = [classes.TempModeToggle];
+
+  if (mode === TEMP_MODES[keys[1]]) {
+    buttonClasses.push(classes.TempModeToggleActive);
+  }
 
   return (
-    <button type="button" onClick={toggleMode}>{ mode }</button>
+    <button
+      type="button"
+      className={buttonClasses.join(' ')}
+      onClick={toggleMode}
+      aria-label={`Show temperature in °${otherOption}`}
+    >
+      <span className={classes.Inner}>
+        <span>
+          { `°${TEMP_MODES[keys[0]]}` }
+        </span>
+        <span className={classes.Handle} />
+        <span>
+          { `°${TEMP_MODES[keys[1]]}` }
+        </span>
+      </span>
+    </button>
   );
 }
 
