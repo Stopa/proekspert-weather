@@ -29,12 +29,8 @@
 }
 
 .BackButton {
-  border: none;
-  background: none;
-  color: currentColor;
-  cursor: pointer;
-  transition: color 100ms linear;
-  padding: 0;
+  @include button();
+
   font-size: 32px;
 
   &:hover {
