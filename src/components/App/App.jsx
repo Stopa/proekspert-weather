@@ -14,6 +14,7 @@ import { restoreForecastFromCache, appCacheKey } from '../../store/actions/forec
 import AppContainer from '../AppContainer';
 
 function App() {
+  // Check for previously saved forecast in localStorage
   useEffect(() => {
     const cache = JSON.parse(window.localStorage.getItem(appCacheKey));
 

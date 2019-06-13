@@ -2,8 +2,7 @@
 
 import { setError } from './ui';
 
-import type { ForecastCurrent } from '../../types/ForecastCurrent';
-import type { ForecastDay } from '../../types/ForecastDay';
+import type { Forecast } from '../../types/Forecast';
 
 import config from '../../config.json';
 
@@ -115,16 +114,10 @@ export function fetchForecast() {
   };
 }
 
-type Forecast = {
-  current: ForecastCurrent,
-  days: Array<ForecastDay>,
-  location: string,
-}
-
 export function restoreForecastFromCache(forecast: Forecast) {
   return function restoreForecastFromCacheThunk(dispatch: Function) {
     dispatch(receiveForecast(forecast));
 
-    dispatch(fetchForecast());
+    return dispatch(fetchForecast());
   };
 }

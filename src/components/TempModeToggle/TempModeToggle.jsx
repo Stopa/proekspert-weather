@@ -31,7 +31,7 @@ function TempModeToggle(props: Props) {
 
   const otherOption = TEMP_MODES[otherOptionKey];
 
-  const toggleMode = useCallback(() => {
+  const clickListener = useCallback(() => {
     changeMode(otherOption);
   }, [changeMode, otherOption]);
 
@@ -45,7 +45,7 @@ function TempModeToggle(props: Props) {
     <button
       type="button"
       className={buttonClasses.join(' ')}
-      onClick={toggleMode}
+      onClick={clickListener}
       aria-label={`Show temperature in °${otherOption}`}
     >
       <span className={classes.Inner}>

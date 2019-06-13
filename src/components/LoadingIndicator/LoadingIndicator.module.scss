@@ -1,11 +1,4 @@
-@keyframes spin {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(-1turn);
-  }
-}
+@import '../../scss-commons/animations';
 
 .LoadingIndicator {
   position: absolute;

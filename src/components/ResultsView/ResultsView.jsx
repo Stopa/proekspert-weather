@@ -58,7 +58,7 @@ function ResultsView(props: Props) {
           <TempModeToggle />
         </span>
       </header>
-      <section className={classes.Now}>
+      <article className={classes.Now}>
         <time dateTime={current.date}>{ moment(current.date).format('dddd, MMMM Do YYYY') }</time>
         <div className={classes.Now_Condition_Text}>
           { currentCondition.description }
@@ -93,7 +93,7 @@ function ResultsView(props: Props) {
             </tbody>
           </table>
         </section>
-      </section>
+      </article>
       <section className={classes.Days}>
         { days.map(day => <DayBlock key={moment(day.date).unix()} {...day} />) }
       </section>

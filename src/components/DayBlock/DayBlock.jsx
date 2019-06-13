@@ -21,12 +21,12 @@ export default function DayBlock(props: Props) {
   const temperature = useTemp(avgTempC, avgTempF);
 
   return (
-    <div className={classes.DayBlock}>
+    <article className={classes.DayBlock}>
       <time dateTime={date}>{ moment(date).format('dddd') }</time>
       <span className={classes.icon}>
         <WeatherConditionIcon code={conditionCode} />
       </span>
       { temperature }
-    </div>
+    </article>
   );
 }
