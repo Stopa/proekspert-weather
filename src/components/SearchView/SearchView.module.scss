@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
 }
 
 .SearchForm_control {
@@ -12,20 +13,23 @@
   margin-bottom: 32px;
   appearance: none;
 
+  div {
+    flex: 1 1 100%;
+  }
+
   input[type="search"] {
     background: none;
     border: none;
     text-align: center;
     font: inherit;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 40px;
     padding-left: 32px;
     line-height: 1;
     color: currentColor;
-    flex: 1 1 100%;
     outline: none;
     appearance: textfield;
-    // TODO: text field doesn't shrink on smaller displays
+    width: 100%;
 
     &::placeholder {
       opacity: 0.5;
@@ -60,7 +64,7 @@
   font: inherit;
   color: currentColor;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 12px;
   outline: none;
 

@@ -64,7 +64,9 @@ function SearchView(props: Props) {
   return (
     <form action="#" onSubmit={submitListener} className={classes.SearchForm}>
       <div className={classes.SearchForm_control}>
-        <input type="search" placeholder="City" aria-label="Enter your location" value={query || ''} onChange={changeListener} />
+        <div>
+          <input type="search" placeholder="City" aria-label="Enter your location" value={query || ''} onChange={changeListener} />
+        </div>
         <button type="submit" className="material-icons" disabled={query === ''}>search</button>
       </div>
       or
