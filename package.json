@@ -1,5 +1,6 @@
 {
   "name": "proekspert-weather",
+  "homepage":"https://stopa.github.io/proekspert-weather",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "flow-bin": "^0.100.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0"
   }
 }
