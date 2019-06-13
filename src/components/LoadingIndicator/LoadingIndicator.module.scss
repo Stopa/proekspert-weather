@@ -1,4 +1,5 @@
 @import '../../scss-commons/animations';
+@import '../../scss-commons/mixins';
 
 .LoadingIndicator {
   position: absolute;
@@ -6,4 +7,8 @@
   left: 0;
   animation: spin 1s linear infinite;
   font-size: 32px;
+
+  @include medium() {
+    position: fixed;
+  }
 }
