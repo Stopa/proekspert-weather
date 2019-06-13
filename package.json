@@ -1,6 +1,6 @@
 {
   "name": "proekspert-weather",
-  "homepage":"https://stopa.github.io/proekspert-weather",
+  "homepage":"https://weather.stepan.dev",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
