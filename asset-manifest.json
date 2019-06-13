@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/proekspert-weather/static/css/main.430b94c9.chunk.css",
-    "main.js": "/proekspert-weather/static/js/main.f63af24d.chunk.js",
-    "main.js.map": "/proekspert-weather/static/js/main.f63af24d.chunk.js.map",
-    "runtime~main.js": "/proekspert-weather/static/js/runtime~main.91e21930.js",
-    "runtime~main.js.map": "/proekspert-weather/static/js/runtime~main.91e21930.js.map",
-    "static/css/2.132b1dac.chunk.css": "/proekspert-weather/static/css/2.132b1dac.chunk.css",
-    "static/js/2.fc4e17ff.chunk.js": "/proekspert-weather/static/js/2.fc4e17ff.chunk.js",
-    "static/js/2.fc4e17ff.chunk.js.map": "/proekspert-weather/static/js/2.fc4e17ff.chunk.js.map",
-    "index.html": "/proekspert-weather/index.html",
-    "precache-manifest.25c1f7e3cd29924864beb80193e52cda.js": "/proekspert-weather/precache-manifest.25c1f7e3cd29924864beb80193e52cda.js",
-    "service-worker.js": "/proekspert-weather/service-worker.js",
-    "static/css/2.132b1dac.chunk.css.map": "/proekspert-weather/static/css/2.132b1dac.chunk.css.map",
-    "static/css/main.430b94c9.chunk.css.map": "/proekspert-weather/static/css/main.430b94c9.chunk.css.map",
-    "static/media/index.scss": "/proekspert-weather/static/media/weathericons-regular-webfont.f5b0d0d9.woff"
+    "main.css": "/static/css/main.430b94c9.chunk.css",
+    "main.js": "/static/js/main.f63af24d.chunk.js",
+    "main.js.map": "/static/js/main.f63af24d.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.fa08915d.chunk.css": "/static/css/2.fa08915d.chunk.css",
+    "static/js/2.fc4e17ff.chunk.js": "/static/js/2.fc4e17ff.chunk.js",
+    "static/js/2.fc4e17ff.chunk.js.map": "/static/js/2.fc4e17ff.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fcf25f6ef8ea9497821938f251cf1edf.js": "/precache-manifest.fcf25f6ef8ea9497821938f251cf1edf.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.fa08915d.chunk.css.map": "/static/css/2.fa08915d.chunk.css.map",
+    "static/css/main.430b94c9.chunk.css.map": "/static/css/main.430b94c9.chunk.css.map",
+    "static/media/index.scss": "/static/media/weathericons-regular-webfont.f5b0d0d9.woff"
   }
 }
