@@ -11,10 +11,11 @@
 
 .Header {
   display: flex;
+  align-items: center;
 
   h1 {
-    margin: 0 0 0 16px;
-    font-size: 32px;
+    margin: 0 0 0 32px;
+    font-size: 40px;
   }
 
   .end {
@@ -39,12 +40,12 @@
 .Now {
   time {
     display: block;
-    font-size: 32px;
+    font-size: 40px;
   }
 }
 
 .Now_Condition_Text {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .Now_Body {
@@ -57,12 +58,12 @@
   font-size: 120px;
 
   .icon {
-    margin: 0 72px;
+    margin: 0 108px 0 52px;
   }
 }
 
 .TemperaturesTable {
-  font-size: 24px;
+  font-size: 20px;
 
   th {
     text-align: left;
