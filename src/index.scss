@@ -2,17 +2,22 @@
 @import '~material-design-icons/iconfont/material-icons.css';
 @import '~weather-icons/css/weather-icons.css';
 
-@import './variables';
+@import './scss-commons/variables';
+@import './scss-commons/mixins';
 
 body {
   margin: 0;
   font: 16px/1.5 'Roboto', sans-serif;
   color: $text-color;
   background: linear-gradient(to bottom right, $bg-grad-start, $bg-grad-end) fixed;
+
+  @include medium() {
+    background: white;
+  }
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

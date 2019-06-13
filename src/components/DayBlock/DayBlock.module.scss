@@ -1,3 +1,5 @@
+@import '../../scss-commons/mixins';
+
 .DayBlock {
   display: flex;
   flex-direction: column;
@@ -6,10 +8,30 @@
   time {
     font-size: 13px;
   }
+
+  @include small() {
+    flex-direction: row;
+    padding: 16px 0;
+    border-bottom: 1px dashed currentColor;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    time {
+      flex: 1;
+      font-size: 20px;
+    }
+  }
 }
 
 .icon {
   font-size: 40px;
   line-height: 1;
   margin: 10px 0;
+
+  @include small() {
+    margin: 0 32px;
+  }
 }

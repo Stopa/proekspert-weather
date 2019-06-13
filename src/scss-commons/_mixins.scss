@@ -1,0 +1,40 @@
+@import './variables';
+
+@mixin small() {
+  @media (max-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media (max-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+/**
+* A set of reasonable defaults for a <button>-like element.
+* Mostly meant for elements that show an icon via SVG or icon fonts.
+* For buttons with visible text content, prefer the text-button mixin.
+**/
+@mixin button() {
+  border: none;
+  background: none;
+  color: currentColor;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 100ms linear;
+  outline: none;
+}
+
+/**
+* Extends the button mixin to also inherit the font family from the
+* parent element.
+**/
+@mixin text-button() {
+  @include button();
+
+  font-family: inherit;
+}
