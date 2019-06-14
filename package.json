@@ -31,6 +31,10 @@
     ],
     "env": {
       "browser": true
+    },
+    "rules": {
+      "//": "Disabled to allow for dynamic importing based on node env",
+      "global-require": "off"
     }
   },
   "browserslist": {
