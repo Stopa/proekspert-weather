@@ -25,6 +25,37 @@ function receiveForecast(forecast) {
   };
 }
 
+function parseDay(day) {
+  const {
+    // ESLint suppression - This data comes from Apixu and is beyond my control
+    /* eslint-disable camelcase */
+    date_epoch,
+    day: {
+      condition: { code: conditionCode },
+      maxtemp_c: maxTempC,
+      maxtemp_f: maxTempF,
+      mintemp_c: minTempC,
+      mintemp_f: minTempF,
+      avgtemp_c: avgTempC,
+      avgtemp_f: avgTempF,
+    },
+    /* eslint-enable */
+  } = day;
+
+  return {
+    // ESLint suppression - This data comes from Apixu and is beyond my control
+    // eslint-disable-next-line camelcase
+    date: date_epoch * 1000,
+    conditionCode,
+    maxTempC,
+    maxTempF,
+    minTempC,
+    minTempF,
+    avgTempC,
+    avgTempF,
+  };
+}
+
 export const appCacheKey = 'weatherAppCache';
 
 export function fetchForecast() {
@@ -54,7 +85,10 @@ export function fetchForecast() {
         current: {
           // ESLint suppression - This data comes from Apixu and is beyond my control
           // eslint-disable-next-line camelcase
-          last_updated_epoch, condition: { code }, temp_c, temp_f,
+          last_updated_epoch,
+          condition: { code: conditionCode },
+          temp_c: tempC,
+          temp_f: tempF,
         },
         forecast: { forecastday },
       } = json;
@@ -63,41 +97,12 @@ export function fetchForecast() {
         // ESLint suppression - This data comes from Apixu and is beyond my control
         // eslint-disable-next-line camelcase
         date: last_updated_epoch * 1000,
-        conditionCode: code,
-        tempC: temp_c,
-        tempF: temp_f,
+        conditionCode,
+        tempC,
+        tempF,
       };
 
-      const days = forecastday.map((day) => {
-        const {
-          // ESLint suppression - This data comes from Apixu and is beyond my control
-          /* eslint-disable camelcase */
-          date_epoch,
-          day: {
-            condition: { code: dayCode },
-            maxtemp_c,
-            maxtemp_f,
-            mintemp_c,
-            mintemp_f,
-            avgtemp_c,
-            avgtemp_f,
-          },
-          /* eslint-enable */
-        } = day;
-
-        return {
-          // ESLint suppression - This data comes from Apixu and is beyond my control
-          // eslint-disable-next-line camelcase
-          date: date_epoch * 1000,
-          conditionCode: dayCode,
-          maxTempC: maxtemp_c,
-          maxTempF: maxtemp_f,
-          minTempC: mintemp_c,
-          minTempF: mintemp_f,
-          avgTempC: avgtemp_c,
-          avgTempF: avgtemp_f,
-        };
-      });
+      const days = forecastday.map(parseDay);
 
       const forecast = {
         location: json.location.name,
