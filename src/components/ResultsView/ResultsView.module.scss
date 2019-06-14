@@ -73,11 +73,12 @@
 
     @include small() {
       margin-right: 24px;
+      margin-left: 32px;
     }
   }
 
   @include small() {
-    font-size: 80px;
+    font-size: 64px;
   }
 }
 
