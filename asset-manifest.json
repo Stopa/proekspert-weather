@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.594f8f27.chunk.css",
+    "main.css": "/static/css/main.b3e5f139.chunk.css",
     "main.js": "/static/js/main.95935e1c.chunk.js",
     "main.js.map": "/static/js/main.95935e1c.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
@@ -9,10 +9,10 @@
     "static/js/2.2fe5ca7c.chunk.js": "/static/js/2.2fe5ca7c.chunk.js",
     "static/js/2.2fe5ca7c.chunk.js.map": "/static/js/2.2fe5ca7c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ecfdea2ade96cbd58a1eae71bf1839a3.js": "/precache-manifest.ecfdea2ade96cbd58a1eae71bf1839a3.js",
+    "precache-manifest.13bdef6ed0709ec80dc5116d7532ce28.js": "/precache-manifest.13bdef6ed0709ec80dc5116d7532ce28.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.fa08915d.chunk.css.map": "/static/css/2.fa08915d.chunk.css.map",
-    "static/css/main.594f8f27.chunk.css.map": "/static/css/main.594f8f27.chunk.css.map",
+    "static/css/main.b3e5f139.chunk.css.map": "/static/css/main.b3e5f139.chunk.css.map",
     "static/media/index.scss": "/static/media/weathericons-regular-webfont.f5b0d0d9.woff"
   }
 }
