@@ -34,7 +34,9 @@ export function fetchForecast() {
     dispatch(requestForecast());
 
     try {
-      const requestURL = new URL('http://api.apixu.com/v1/forecast.json');
+      const { protocol } = window.location;
+
+      const requestURL = new URL(`${protocol}//api.apixu.com/v1/forecast.json`);
 
       requestURL.searchParams.set('days', '7');
       requestURL.searchParams.set('q', query);
