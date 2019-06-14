@@ -26,7 +26,17 @@
   cursor: pointer;
   padding: 0;
   transition: color 100ms linear;
-  outline: none;
+
+  &:focus {
+    outline: thin dotted $highlight-color;
+  }
+
+  /**
+  * Removes the additional dotted outline on focused buttons in Firefox
+  **/
+  &::-moz-focus-inner {
+    border: none;
+  }
 }
 
 /**
