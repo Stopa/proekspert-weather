@@ -25,7 +25,7 @@ function SearchView(props: Props) {
   } = props;
 
   const changeListener = useCallback((event) => {
-    changeQuery(event.currentTarget.value.trim());
+    changeQuery(event.currentTarget.value.trimStart());
   }, [changeQuery]);
 
   const submitListener = useCallback((event) => {
